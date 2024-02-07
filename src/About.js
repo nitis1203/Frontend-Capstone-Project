@@ -3,7 +3,7 @@ import Food from "./assets/Mario and Adrian A.jpg"
 
 function About() {
     return(
-        <div className="about">
+        <div className="about" id="about-section">
             <div className="about-left-container">
                 <h1>Little Lemon</h1>
                 <h3>Chicago</h3>

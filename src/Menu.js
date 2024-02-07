@@ -4,10 +4,10 @@ import LemonDessert from "./assets/lemon dessert.jpg"
 
 function Menu() {
     return(
-        <div className="menu">
+        <div className="menu" id="menu-section">
             <div className="menu-heading">
                 <h1>This weeks specials!</h1>
-                <button className="online-order">Online Menu</button>
+                <button className="online-order">Online  Menu</button>
             </div>
             <div className="menu-container">
                 <div className="menu-card">

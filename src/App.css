@@ -31,9 +31,28 @@ p {
   font-size: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 button {
   padding: 10px;
   background-color: #F4CE14;
+  border: none;
+  font-family: 'karla', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover{
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  transform: scale(1.04);
+  transition: 0.2s ease-in-out;
 }
 
 header {
@@ -41,6 +60,13 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: 20px 290px 20px 290px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
 }
 
 .logo {
@@ -60,7 +86,7 @@ nav ul {
 .main .hero {
   background-color: #495E57;
   height: 60vh;
-  padding: 0px 290px 0px 290px;
+  padding: 80px 290px 0px 290px;
   margin-bottom: 12vh;
   display: flex;
   justify-content: space-around;
