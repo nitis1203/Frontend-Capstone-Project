@@ -1,12 +1,12 @@
 import Header from './Header';
-import Nav from './Nav';
+import Main from './Main';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Nav />
+      <Main />
     </div>
   );
 }

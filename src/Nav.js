@@ -5,9 +5,11 @@ function Nav() {
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/menu">Menu</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/menu">About</a></li>
+        <li><a href="/about">menu</a></li>
+        <li><a href="/contact">Reservations</a></li>
+        <li><a href="/menu">Order Online</a></li>
+        <li><a href="/menu">Login</a></li>
       </ul>
     </nav>
   );
