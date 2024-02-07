@@ -1,15 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text&family=Karla&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Markazi Text', sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: 'karla', sans-serif;
+  font-size: 20px;
+}
+
+button {
+  padding: 10px;
+  background-color: #F4CE14;
+}
+
 header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 20px 290px 20px 290px;
 }
 
 .logo {
-  /* Add styles for logo if needed */
+  padding-right: 200px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  font-family: 'karla', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.main .hero {
+  background-color: #495E57;
+  height: 60vh;
+  padding: 0px 290px 0px 290px;
+  margin-bottom: 12vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-container {
+  margin-right: 10%;
+  padding-top: 1.7rem;
+}
+
+.left-container h1 {
+  color: #F4CE14;
+  font-weight: lighter;
+}
+
+.left-container h3, .left-container p {
+  color: white;
+  font-weight: lighter;
+}
+
+.left-container button{
+  margin-top: 30%;
+}
+
+.hero .right-container {
+  padding-right: 0;
+}
+
+.right-container img{
+  margin-top: 80px;
+  max-height: 60vh;
+  max-width: 60vw;
+  border-radius: 20px;
+}
+
+.menu {
+  padding: 20px 290px 0px 290px;
+}
+
+.menu .menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+
+.menu .menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); /* Adjust the minimum and maximum width as needed */
+  gap: 50px;
+}
+
+.menu-container .menu-card {
+  background-color: #EDEFEE;
+  border-radius: 20px;
+  box-shadow: 20px black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.menu-price{
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-price, .menu-description, .menu-order {
+  padding: 10px 20px;
+}
+
+.menu-order {
+  margin-top: auto;
 }

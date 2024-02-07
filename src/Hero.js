@@ -5,7 +5,7 @@ function Hero() {
         <div className="hero">
             <div className="left-container">
                 <h1>Little Lemon</h1>
-                <h4>Chicago</h4>
+                <h3>Chicago</h3>
                 <p>
                     We are family owned Mediterranian restaurant, focused on traditional recipes served witha modern twist.
                 </p>

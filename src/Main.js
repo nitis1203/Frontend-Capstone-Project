@@ -1,10 +1,12 @@
 import React from 'react';
 import Hero from './Hero';
+import Menu from './Menu';
 
 function Main() {
   return (
-    <div>
-      <Hero/>
+    <div className='main'>
+      <Hero />
+      <Menu />
     </div>
   );
 }
