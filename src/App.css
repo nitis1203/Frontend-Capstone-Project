@@ -7,6 +7,7 @@
 
 h1, h2, h3, h4 {
   font-family: 'Markazi Text', sans-serif;
+  font-weight: lighter;
 }
 
 h1 {
@@ -97,6 +98,7 @@ nav ul {
 
 .menu {
   padding: 20px 290px 0px 290px;
+  height: 100vh;
 }
 
 .menu .menu-heading {
@@ -108,7 +110,7 @@ nav ul {
 
 .menu .menu-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); /* Adjust the minimum and maximum width as needed */
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   gap: 50px;
 }
 
@@ -139,4 +141,116 @@ nav ul {
 
 .menu-order {
   margin-top: auto;
+}
+
+.testimonials{
+  height: 80vh;
+  background-color: #495E57;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 290px 0px 290px;
+}
+
+.testimonial-container {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.testimonial-card {
+  background-color: #EDEFEE;
+  padding: 20px;
+  height: 200px;
+  width: 200px;
+}
+
+.testimonial-card h3, .testimonials h2 {
+  font-weight: lighter;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.user {
+  border: solid black;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.about{
+  padding: 80px 290px 0px 290px;
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
+}
+
+.about .about-left-container h1{
+  color: #F4CE14;
+  padding-top: 50px;
+}
+
+.about .about-left-container h3{
+  color: #495E57;
+  padding-bottom: 50px;
+}
+
+.about-right-container{
+  display: flex;
+}
+
+.card {
+  height: 50vh;
+  width: 250px;
+}
+
+#item-1, #item-2 {
+  height: 50vh;
+  width: 250px;
+  object-fit: cover;
+  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+#item-1 {
+  z-index: 1;
+  transform: translateX(+60px) translateY(+60px);
+  opacity: 90%;
+}
+
+#item-2 {
+  z-index: 2;
+}
+
+.footer{
+  background-color: #202124;
+  padding: 80px 290px 80px 290px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo img{
+  height: 150px;
+}
+
+.footer h3 {
+  color: white;
+  font-weight: lighter;
+  padding-bottom: 15px;
+}
+
+.footer p, .footer a {
+  font-weight: lighter;color: #6d6d6d;
+}
+
+.doormat-navigation, .social-media {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,12 +1,9 @@
 import React from 'react';
-import Hero from './Hero';
-import Menu from './Menu';
 
-function Main() {
+function Main(props) {
   return (
     <div className='main'>
-      <Hero />
-      <Menu />
+      {props.children}
     </div>
   );
 }
