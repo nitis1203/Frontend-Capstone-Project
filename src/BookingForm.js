@@ -1,7 +1,8 @@
 // BookingForm.js
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
+import { fetchAPI } from './api';
 
-function BookingForm({ setAvailableTimes }) {
+function BookingForm({ availableTimes, setAvailableTimes, userId }) {
     const timesReducer = (state, action) => {
         switch (action.type) {
             case 'UPDATE_TIMES':
@@ -11,16 +12,49 @@ function BookingForm({ setAvailableTimes }) {
         }
     };
 
-    const updateTimes = (selectedDate) => {
-        const updatedTimes = ['17:00', '18:00', '19:00', '20:00', '21:00'];
-        setAvailableTimes(updatedTimes); // Update availableTimes using the provided setter function
+    const isUserAlreadyBooked = (date, time) => {
+        const userId = getUserId(); // Assume you have a way to get the user ID
+        const userBookings = JSON.parse(localStorage.getItem(userId)) || [];
+        return userBookings.some(booking => booking.date === date && booking.time === time);
     };
 
-    const initializeTimes = () => {
-        return ['17:00', '18:00', '19:00', '20:00', '21:00'];
+    // Function to add a new booking for the user
+    const addBooking = (date, time) => {
+        const userId = getUserId(); // Assume you have a way to get the user ID
+        const userBookings = JSON.parse(localStorage.getItem(userId)) || [];
+        userBookings.push({ date, time });
+        localStorage.setItem(userId, JSON.stringify(userBookings));
     };
 
-    const [timesState, dispatch] = useReducer(timesReducer, initializeTimes());
+    // Function to get the user ID (You need to implement this)
+    const getUserId = () => {
+        // Implement logic to get the user ID
+        // For testing purposes, you can use a random user ID or a static value
+        return 'user123';
+    };
+
+    const updateTimes = async (selectedDate) => {
+        const availableTimes = await fetchAPI(selectedDate);
+        setAvailableTimes(availableTimes);
+    };
+
+    const initializeTimes = async () => {
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0]; // Format today's date as YYYY-MM-DD
+        const availableTimes = await fetchAPI(formattedDate);
+        return availableTimes;
+    };
+
+    const [timesState, dispatch] = useReducer(timesReducer, []);
+
+    useEffect(() => {
+        initializeTimes().then(availableTimes => {
+            dispatch({ type: 'UPDATE_TIMES', payload: availableTimes });
+        }).catch(error => {
+            console.error('Error fetching available times:', error);
+        });
+    }, []);
+
     const [formData, setFormData] = useState({
         date: '',
         time: '',
@@ -36,15 +70,21 @@ function BookingForm({ setAvailableTimes }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform actions with form data, for example:
-        console.log(formData); // Log form data to console
-        // Reset form data if needed
-        setFormData({
-            date: '',
-            time: '',
-            guests: '',
-            occasion: ''
-        });
+        const { date, time } = formData;
+
+        // Check if the user has already booked for the same day and time
+        if (isUserAlreadyBooked(date, time)) {
+            alert('You have already booked for the same day and same time.');
+        } else {
+            addBooking(date, time);
+            alert('Booking successful!');
+            // Reset form fields after successful booking
+            setFormData({
+                date: '',
+                time: '',
+                // Reset other form fields as needed
+            });
+        }
     };
 
     const handleInputChange = (e) => {
@@ -68,7 +108,7 @@ function BookingForm({ setAvailableTimes }) {
                 <div className="form-group">
                     <label className="form-label" htmlFor="res-time">Choose time</label>
                     <select className="form-select" id="res-time" name="time" onChange={handleTimeChange}>
-                        {timesState.map(time => (
+                        {availableTimes.map(time => (
                             <option key={time} value={time}>{time}</option>
                         ))}
                     </select>
@@ -92,5 +132,6 @@ function BookingForm({ setAvailableTimes }) {
         </div>
     );
 }
+
 
 export default BookingForm;
