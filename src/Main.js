@@ -1,9 +1,16 @@
 import React from 'react';
+import Hero from './Hero';
+import Menu from './Menu';
+import TestiMonials from './Testimonials';
+import About from './About';
 
-function Main(props) {
+function Main() {
   return (
     <div className='main'>
-      {props.children}
+      <Hero />
+      <Menu />
+      <TestiMonials />
+      <About />
     </div>
   );
 }

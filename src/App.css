@@ -67,13 +67,16 @@ header {
   transform: translateY(0);
   transition: transform 0.3s ease-in-out;
   background-color: white;
+  border-bottom:  0.5px solid rgb(89, 89, 89, 0.5);
+  box-shadow: 0px 0px 5px 0px;
+  z-index: 100;
 }
 
 .logo {
   padding-right: 200px;
 }
 
-nav ul {
+nav {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -255,7 +258,7 @@ nav ul {
   z-index: 2;
 }
 
-.footer{
+footer{
   background-color: #202124;
   padding: 80px 290px 80px 290px;
   display: flex;
@@ -266,14 +269,18 @@ nav ul {
   height: 150px;
 }
 
-.footer h3 {
-  color: white;
+footer h3 {
+  color: #495E57;
   font-weight: lighter;
   padding-bottom: 15px;
 }
 
-.footer p, .footer a {
+footer p, footer a {
   font-weight: lighter;color: #6d6d6d;
+}
+
+.doormat-navigation a:hover, .social-media a:hover{
+  text-decoration: underline;
 }
 
 .doormat-navigation, .social-media {

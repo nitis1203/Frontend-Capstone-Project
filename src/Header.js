@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import Nav from './Nav';
 import Logo from "./assets/Logo.svg";
 
-function Header() {
+function Header(props) {
   const headerRef = useRef(null);
   let prevScrollPos = 0;
 
@@ -33,7 +32,9 @@ function Header() {
       <div className='logo'>
         <img src={Logo} alt='Little Lemon logo'/>
       </div>
-      <Nav />
+      <nav>
+        {props.children}
+      </nav>
     </header>
   );
 }
