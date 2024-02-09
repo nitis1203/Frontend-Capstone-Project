@@ -341,3 +341,26 @@ footer p, footer a {
 .form-submit:hover {
   background-color: #0056b3;
 }
+
+.construction-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.construction-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.construction-image img {
+  width: 40%;
+}
+
+.contruction-text {
+  color: #495E57;
+  text-align: center;
+}

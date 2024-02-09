@@ -3,7 +3,7 @@ import Logo from "./assets/Logo.svg";
 
 function Header(props) {
   const headerRef = useRef(null);
-  let prevScrollPos = 0;
+  const prevScrollPos = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,12 +12,12 @@ function Header(props) {
       if (!headerElement) {
         return;
       }
-      if (prevScrollPos > currentScrollPos) {
+      if (prevScrollPos.current > currentScrollPos) {
         headerElement.style.transform = "translateY(0)";
       } else {
         headerElement.style.transform = "translateY(-200px)";
       }
-      prevScrollPos = currentScrollPos;
+      prevScrollPos.current = currentScrollPos;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -30,7 +30,9 @@ function Header(props) {
   return (
     <header className="header" ref={headerRef}>
       <div className='logo'>
-        <img src={Logo} alt='Little Lemon logo'/>
+        <a href="/" onClick={() => window.location.reload()}>
+          <img src={Logo} alt='Little Lemon logo'/>
+        </a>
       </div>
       <nav>
         {props.children}

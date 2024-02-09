@@ -1,13 +1,22 @@
 import GreekSalad from "./assets/greek salad.jpg"
 import Bruchetta from "./assets/bruchetta.svg"
 import LemonDessert from "./assets/lemon dessert.jpg"
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 function Menu() {
+
+    const Navigate = useNavigate();
+
+    const handleOnlineBookingClick = () => {
+        Navigate('/warning');
+    };
+
     return(
         <div className="menu" id="menu-section">
             <div className="menu-heading">
                 <h1>This weeks specials!</h1>
-                <button className="online-order">Online  Menu</button>
+                <button className="online-order" aria-label="On Click" onClick={handleOnlineBookingClick}>Online  Menu</button>
             </div>
             <div className="menu-container">
                 <div className="menu-card">
