@@ -1,7 +1,12 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import { fetchAPI } from './api';
+import ConfirmBooking from './ConfirmedBooking';
 
-function BookingForm({ availableTimes, setAvailableTimes, userId }) {
+function BookingForm() {
+
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    const [confirmationMessage, setConfirmationMessage] = useState('');
+
     const timesReducer = (state, action) => {
         switch (action.type) {
             case 'UPDATE_TIMES':
@@ -69,31 +74,25 @@ function BookingForm({ availableTimes, setAvailableTimes, userId }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const { date, time, email, name } = formData;
-
-        /*const formData = {
-            date: event.target.date.value,
-            time: event.target.time.value,
-            guests: event.target.guests.value,
-            occasion: event.target.occasion.value
-        };*/
-        console.log('Form Data:', formData);
-
+    
         if (isUserAlreadyBooked(date, time)) {
-            alert('You have already booked for the same day and same time.');
+          setConfirmationMessage('You have already booked for the same day and same time.');
+          setShowConfirmation(true);
         } else {
-            addBooking(date, time, email, name);
-            alert('Booking successful!');
-            // Reset form fields after successful submission
-            setFormData({
-                date: '',
-                time: '',
-                guests: '',
-                occasion: '',
-                email: '',
-                name: ''
-            });
+          addBooking(date, time, email, name);
+          setConfirmationMessage('Booking successful!');
+          setShowConfirmation(true);
+          // Reset form fields after successful submission
+          setFormData({
+            date: '',
+            time: '',
+            guests: '',
+            occasion: '',
+            email: '',
+            name: ''
+          });
         }
-    };
+      };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -145,7 +144,7 @@ function BookingForm({ availableTimes, setAvailableTimes, userId }) {
                     <select className="form-select" id="res-time" name="time" onChange={handleInputChange} required value={formData.time}>
                         <option value="">Select Time</option>
                         {timesState.map(time => (
-                            <option key={time} value={time}>{time}</option>
+                        <option key={time} value={time}>{time}</option>
                         ))}
                     </select>
                 </div>
@@ -161,11 +160,17 @@ function BookingForm({ availableTimes, setAvailableTimes, userId }) {
                         <option value="">Select Occasion</option>
                         <option value="Birthday">Birthday</option>
                         <option value="Anniversary">Anniversary</option>
+                        <option value="Engagement">Engagement</option>
                     </select>
                 </div>
 
-                <button aria-label="On Click" className="form-submit" type="submit">Make a reservation</button>
+                <div className='form-button'>
+                    <button aria-label="On Click" className="form-submit" type="submit">Make a reservation</button>
+                </div>
             </form>
+            {showConfirmation && (
+                <ConfirmBooking message={confirmationMessage} onClose={() => setShowConfirmation(false)} />
+            )}
         </div>
     );
 }
