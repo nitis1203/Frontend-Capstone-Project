@@ -1,5 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import Logo from "./assets/Logo.svg";
+import React, { useEffect, useRef, useState } from 'react';
+import Logo from "../assets/Logo.svg";
+import hamburger from "../assets/🦆 icon _hamburger menu.svg"
+import close from "../assets/cross-close.svg"
+import './Header.css'
 
 function Header(props) {
   const headerRef = useRef(null);
@@ -36,6 +39,9 @@ function Header(props) {
       </div>
       <nav>
         {props.children}
+        <div>
+          <img src=''/>
+        </div>
       </nav>
     </header>
   );

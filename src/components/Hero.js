@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import food from "./assets/restauranfood.jpg"
+import food from "../assets/restauranfood.jpg"
 
 function Hero() {
     const Navigate = useNavigate();

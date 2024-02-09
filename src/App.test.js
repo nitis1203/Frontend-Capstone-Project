@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import BookingForm from './BookingForm';
+import BookingForm from './components/BookingForm';
 
 describe('BookingForm Component', () => {
     test('Renders static text correctly', () => {

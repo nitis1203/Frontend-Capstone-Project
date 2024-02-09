@@ -1,4 +1,4 @@
-import Warning from "./assets/Warning-sign.png"
+import Warning from "../assets/Warning-sign.png"
 
 function UnderConstruction() {
     return(

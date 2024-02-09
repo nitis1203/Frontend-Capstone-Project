@@ -1,5 +1,5 @@
-import Chef from "./assets/restaurant chef B.jpg"
-import Food from "./assets/Mario and Adrian A.jpg"
+import Chef from "../assets/restaurant chef B.jpg"
+import Food from "../assets/Mario and Adrian A.jpg"
 
 function About() {
     return(

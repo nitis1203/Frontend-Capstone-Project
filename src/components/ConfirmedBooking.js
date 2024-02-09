@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import SuccessImage from './assets/success.png';
-import ErrorImage from './assets/Warning-sign.png';
+import SuccessImage from '../assets/success.png';
+import ErrorImage from '../assets/Warning-sign.png';
 
 function ConfirmBooking({ message, onClose }) {
   useEffect(() => {
