@@ -39,14 +39,14 @@ function App() {
         <Route path="/warning-order" element={<UnderConstruction />}></Route>
         <Route path="/warning-login" element={<UnderConstruction />}></Route>
       </Routes>
-      {/*<Footer>
-        <Link to="/main" aria-label="On Click" className="nav-item" onClick={handleClick("home")}>Home</Link>
-        <Link to="/main" aria-label="On Click" className="nav-item" onClick={handleClick("menu")}>Menu</Link>
-        <Link to="/main" aria-label="On Click" className="nav-item" onClick={handleClick("about")}>About</Link>
-        <Link to="/bookingpage" aria-label="On Click" className="nav-item">Reservations</Link>
-        <Link to="/warning" aria-label="On Click" className="nav-item">Order Online</Link>
-        <Link to="/warning" aria-label="On Click" className="nav-item">Login</Link>
-      </Footer>*/}
+      <Footer>
+        <Link to="/main" aria-label="On Click" onClick={handleClick("home")}>Home</Link>
+        <Link to="/main" aria-label="On Click" onClick={handleClick("menu")}>Menu</Link>
+        <Link to="/main" aria-label="On Click" onClick={handleClick("about")}>About</Link>
+        <Link to="/bookingpage" aria-label="On Click" >Reservations</Link>
+        <Link to="/warning" aria-label="On Click" >Order Online</Link>
+        <Link to="/warning" aria-label="On Click">Login</Link>
+      </Footer>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Logo from "../assets/Logo-footer.png"
+import "./Footer.css"
 
 function Footer(props) {
 

@@ -3,6 +3,7 @@ import Bruchetta from "../assets/bruchetta.svg"
 import LemonDessert from "../assets/lemon dessert.jpg"
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
+import "./Menu.css"
 
 function Menu() {
 

@@ -35,6 +35,7 @@ nav ul {
     font-size: 20px;
     font-weight: bold;
     align-items: center;
+    list-style: none;
 }
 
 .nav-item{
@@ -85,7 +86,6 @@ nav ul {
     nav ul {
         display: none;
         flex-direction: column;
-        width: 100%;
         margin-bottom: 0.25rem;
         margin-top: 2rem;
     }

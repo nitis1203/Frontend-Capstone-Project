@@ -1,5 +1,6 @@
 import Chef from "../assets/restaurant chef B.jpg"
 import Food from "../assets/Mario and Adrian A.jpg"
+import "./About.css"
 
 function About() {
     return(

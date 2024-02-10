@@ -8,9 +8,9 @@ function Main() {
   return (
     <main className='main'>
       <Hero />
-      {/*<Menu />
+      <Menu />
       <TestiMonials />
-  <About />*/}
+      <About />
     </main>
   );
 }

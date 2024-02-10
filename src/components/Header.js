@@ -31,7 +31,6 @@ function Header(props) {
     };
   }, []);
 
-  // Function to handle closing the menu
   const closeMenu = () => {
     setMenuOpen(false);
   };
@@ -52,11 +51,12 @@ function Header(props) {
           )}
         </div>
         <ul className={menuOpen ? "open" : ""}>
-          {React.Children.map(props.children, child => {
-            // Adding an onClick event to each child to close the menu
-            return React.cloneElement(child, {
-              onClick: closeMenu
-            });
+        {React.Children.map(props.children, child => {
+            return (
+              <li onClick={closeMenu}>
+                {child}
+              </li>
+            );
           })}
         </ul>
       </nav>
