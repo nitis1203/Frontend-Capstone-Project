@@ -30,7 +30,7 @@ function App() {
         <NavLink to="/warning-order" aria-label="On Click" className="nav-item">Order</NavLink>
         <NavLink to="/warning-login" aria-label="On Click" className="nav-item">Login</NavLink>
       </Header>
-      {/*<Routes>
+      <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/home" element={<Main />}></Route>
         <Route path="/menu" element={<Main />}></Route>
@@ -39,7 +39,7 @@ function App() {
         <Route path="/warning-order" element={<UnderConstruction />}></Route>
         <Route path="/warning-login" element={<UnderConstruction />}></Route>
       </Routes>
-      <Footer>
+      {/*<Footer>
         <Link to="/main" aria-label="On Click" className="nav-item" onClick={handleClick("home")}>Home</Link>
         <Link to="/main" aria-label="On Click" className="nav-item" onClick={handleClick("menu")}>Menu</Link>
         <Link to="/main" aria-label="On Click" className="nav-item" onClick={handleClick("about")}>About</Link>

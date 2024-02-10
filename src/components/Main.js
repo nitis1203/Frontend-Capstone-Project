@@ -6,12 +6,12 @@ import About from './About';
 
 function Main() {
   return (
-    <div className='main'>
+    <main className='main'>
       <Hero />
-      <Menu />
+      {/*<Menu />
       <TestiMonials />
-      <About />
-    </div>
+  <About />*/}
+    </main>
   );
 }
 

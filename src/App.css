@@ -55,45 +55,6 @@ button:hover{
   transition: 0.2s ease-in-out;
 }
 
-.main .hero {
-  background-color: #495E57;
-  height: 60vh;
-  padding: 80px 290px 0px 290px;
-  margin-bottom: 12vh;
-  display: flex;
-  justify-content: space-around;
-}
-
-.left-container {
-  margin-right: 10%;
-  padding-top: 1.7rem;
-}
-
-.left-container h1 {
-  color: #F4CE14;
-  font-weight: lighter;
-}
-
-.left-container h3, .left-container p {
-  color: white;
-  font-weight: lighter;
-}
-
-.left-container button{
-  margin-top: 30%;
-}
-
-.hero .right-container {
-  padding-right: 0;
-}
-
-.right-container img{
-  margin-top: 80px;
-  max-height: 60vh;
-  max-width: 60vw;
-  border-radius: 20px;
-}
-
 .menu {
   padding: 20px 290px 0px 290px;
   height: 100vh;

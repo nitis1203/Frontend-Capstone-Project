@@ -1,0 +1,59 @@
+.hero {
+    background-color: #495E57;
+    height: 60vh;
+    margin-bottom: 12vh;
+    padding: 4rem 20% 0 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-container {
+    margin-right: 10%;
+    padding-top: 1.7rem;
+}
+
+.left-container h1 {
+    color: #F4CE14;
+    font-weight: lighter;
+}
+
+.left-container h3, .left-container p {
+    color: white;
+    font-weight: lighter;
+}
+
+.left-container button{
+    margin-top: 30%;
+}
+
+.hero .right-container {
+    padding-right: 0;
+}
+
+.right-container img{
+    margin-top: 80px;
+    max-height: 60vh;
+    max-width: 60vw;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .hero{
+        flex-direction: column;
+        padding: 4rem 1rem 0 1rem;
+    }
+
+    .left-container button{
+        margin-top: 3rem;
+    }
+
+    .right-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-container img {
+        margin-top: 3rem;
+    }
+}
