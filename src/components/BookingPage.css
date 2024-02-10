@@ -1,14 +1,14 @@
 .form-page {
-    padding: 4rem 20% 0 20%;
+    padding: 8rem 20% 0 20%;
 }
 
-  .form-page h2 {
+.form-page h2 {
     text-align: center;
 }
 
 .form-container {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 20px;
     background-color: #495E57;
     border-radius: 8px;
