@@ -7,6 +7,7 @@ import './Header.css'
 function Header(props) {
   const headerRef = useRef(null);
   const prevScrollPos = useRef(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,18 +31,34 @@ function Header(props) {
     };
   }, []);
 
+  // Function to handle closing the menu
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header" ref={headerRef}>
-      <div className='logo'>
-        <a href="/" onClick={() => window.location.reload()}>
-          <img src={Logo} alt='Little Lemon logo'/>
-        </a>
-      </div>
       <nav>
-        {props.children}
-        <div>
-          <img src=''/>
+        <div className='logo'>
+          <a href="/" onClick={() => window.location.reload()}>
+            <img src={Logo} alt='Little Lemon logo'/>
+          </a>
         </div>
+        <div className='hamburger' onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? (
+            <img src={close} alt="Close Icon" className='close-icon'/>
+          ) : (
+            <img src={hamburger} alt="Hamburger Icon" />
+          )}
+        </div>
+        <ul className={menuOpen ? "open" : ""}>
+          {React.Children.map(props.children, child => {
+            // Adding an onClick event to each child to close the menu
+            return React.cloneElement(child, {
+              onClick: closeMenu
+            });
+          })}
+        </ul>
       </nav>
     </header>
   );
