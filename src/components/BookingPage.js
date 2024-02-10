@@ -1,6 +1,7 @@
 // BookingPage.js
 import React from 'react';
 import BookingForm from './BookingForm';
+import "./BookingPage.css"
 
 function BookingPage() {
 

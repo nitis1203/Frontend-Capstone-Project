@@ -10,7 +10,7 @@ function Menu() {
     const Navigate = useNavigate();
 
     const handleOnlineBookingClick = () => {
-        Navigate('/warning');
+        Navigate('/warning-order');
     };
 
     return(
